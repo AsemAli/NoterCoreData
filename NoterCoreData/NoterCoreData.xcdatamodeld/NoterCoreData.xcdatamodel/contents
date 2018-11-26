@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="isSelected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="menu" attributeType="String" syncable="YES"/>
+        <relationship name="parentCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteText" inverseName="newRelationship" inverseEntity="NoteText" syncable="YES"/>
+    </entity>
+    <entity name="NoteText" representedClassName="NoteText" syncable="YES" codeGenerationType="class">
+        <attribute name="note" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="parentCategory" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-380.40625" positionY="-48.23046875" width="128" height="88"/>
+        <element name="NoteText" positionX="-54" positionY="0" width="128" height="73"/>
+    </elements>
 </model>

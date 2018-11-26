@@ -1,24 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4ed-gc-roF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Notes-->
+        <scene sceneID="QiU-o9-eOb">
+            <objects>
+                <tableViewController id="do9-ge-Ce9" customClass="TableViewController" customModule="NoterCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YVz-Gu-pZe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tabelID" id="baj-iM-sHk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="baj-iM-sHk" id="xlM-aL-Mgi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ToNotePage" id="h5g-op-cHX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="do9-ge-Ce9" id="fgE-Fl-c2L"/>
+                            <outlet property="delegate" destination="do9-ge-Ce9" id="bLc-re-baU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notes" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="G8T-Yh-LGH">
+                        <barButtonItem key="backBarButtonItem" title="Notes" id="9MB-cr-TJP"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Ctr-db-Na7">
+                                <connections>
+                                    <action selector="addPressedButton:" destination="do9-ge-Ce9" id="0iJ-SB-lNy"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="x5J-y1-2Sw">
+                                <connections>
+                                    <action selector="editPressedButton:" destination="do9-ge-Ce9" id="MaS-xe-SSU"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5E-XA-eEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="100.29985007496252"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NoterCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tapete-Rasch-Crispy-Paper-Uni-creme-527001-172120" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-qZ-OVF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2B-x5-phx">
+                                <rect key="frame" x="5" y="64" width="192" height="322"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="fGR-xg-eQ6"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="5pG-64-zma">
+                                <rect key="frame" x="197" y="64" width="178" height="322"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PUX-qZ-OVF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GU5-BI-VuU"/>
+                            <constraint firstItem="q2B-x5-phx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GgU-eu-Tca"/>
+                            <constraint firstItem="PUX-qZ-OVF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IPw-RX-UHl"/>
+                            <constraint firstItem="5pG-64-zma" firstAttribute="leading" secondItem="q2B-x5-phx" secondAttribute="trailing" id="Pyo-Q8-DQP"/>
+                            <constraint firstItem="q2B-x5-phx" firstAttribute="bottom" secondItem="PUX-qZ-OVF" secondAttribute="bottom" constant="-281" id="U7J-pW-Zu7"/>
+                            <constraint firstAttribute="bottom" secondItem="PUX-qZ-OVF" secondAttribute="bottom" id="UnL-2F-ne9"/>
+                            <constraint firstItem="5pG-64-zma" firstAttribute="bottom" secondItem="q2B-x5-phx" secondAttribute="bottom" id="Z63-2K-6xZ"/>
+                            <constraint firstItem="5pG-64-zma" firstAttribute="top" secondItem="q2B-x5-phx" secondAttribute="top" id="cLi-nk-MrT"/>
+                            <constraint firstItem="PUX-qZ-OVF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hYo-2n-TRL"/>
+                            <constraint firstItem="q2B-x5-phx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="l7u-f4-gaf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5pG-64-zma" secondAttribute="trailing" constant="-16" id="x1t-cM-MG2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="xbF-cQ-XZZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QQ0-0B-FE1">
+                            <connections>
+                                <action selector="buttonDonePressed:" destination="BYZ-38-t0r" id="0nL-On-i27"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="arabicParagraph" destination="5pG-64-zma" id="Aal-Mq-Xoc"/>
+                        <outlet property="englishParagraph" destination="q2B-x5-phx" id="aRU-fl-FVx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2232.8000000000002" y="99.400299850074973"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Df-yh-CmG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4ed-gc-roF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6L8-Rd-wTD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="do9-ge-Ce9" kind="relationship" relationship="rootViewController" id="IkH-JU-5JG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEI-bQ-wEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-639.20000000000005" y="100.29985007496252"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tapete-Rasch-Crispy-Paper-Uni-creme-527001-172120" width="1200" height="1111"/>
+    </resources>
 </document>
